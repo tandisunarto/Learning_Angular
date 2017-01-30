@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ProductFilterPipe } from './products/product-filter.pipe';
+import { StarComponent } from './shared/star.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ProductFilterPipe } from './products/product-filter.pipe';
     AppComponent,
     ProductListComponent,
     ProductFilterPipe,
+    StarComponent,
   ],
   imports: [
     BrowserModule,
