@@ -5,7 +5,7 @@ import { ProductService } from './products/product.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ ProductService ]
+  // providers: [ ProductService ]
 })
 export class AppComponent {
   pageTitle = 'Acme Product Management';
