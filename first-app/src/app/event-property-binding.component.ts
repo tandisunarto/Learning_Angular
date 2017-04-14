@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-event-property-binding',
   template: `
   <br>
+    <div *ngIf="searchKey.length <= 0">****************************</div>
     <input [value]="searchKey" (input)="searchKey=$event.target.value" type="text" />
     <button (click)="onSearchClick()">Search</button>
   `,
@@ -16,7 +17,7 @@ export class EventPropertyBindingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   onSearchClick(){
