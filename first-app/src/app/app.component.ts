@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  searchMessage = '';
 
   get BrowserUserAgent(): string {
     return navigator.userAgent;
@@ -15,5 +16,9 @@ export class AppComponent {
 
   onClickedTwo(value: string){
     alert(value);
+  }
+
+  onSearchClick(value: string){
+    this.searchMessage = value;
   }
 }

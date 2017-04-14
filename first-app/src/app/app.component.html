@@ -11,4 +11,12 @@
   <br>
   Event Binding
   <app-event-binding (clickedTwo)='onClickedTwo($event)'></app-event-binding>
+  <br>
+  Property and Event Binding
+  <app-event-property-binding
+  (searchClick)="onSearchClick($event)"
+  >
+  </app-event-property-binding>
+  <br>
+  you are searching for: {{searchMessage}}
 </h1>
