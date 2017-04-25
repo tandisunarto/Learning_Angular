@@ -5,11 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { RecipeBookComponent } from './recipe-book.component';
 import { HeaderComponent } from './header.component';
+import { RecipesComponent } from './recipes';
+import { RecipeListComponent,  RecipeItemComponent } from './recipes/recipe-list'; // components in this folder are registered in the index.ts
 
 @NgModule({
   declarations: [
     RecipeBookComponent,
-    HeaderComponent
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
