@@ -6,8 +6,10 @@ import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './header.component';
 import { RecipeBookComponent } from './recipe-book.component';
 import { RecipesComponent } from './recipes';
-import { RecipeListComponent,  RecipeItemComponent } from './recipes/recipe-list'; // components in this folder are exposed in the index.ts
-import { RecipeDetailComponent } from './recipes/recipe-detail'; // components in this folder are exposed in the index.ts
+import { RecipeListComponent,  RecipeItemComponent } from './recipes/recipe-list';
+import { RecipeDetailComponent } from './recipes/recipe-detail';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail'; // components i
     RecipesComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    ShoppingListComponent,
+    ShoppingListAddComponent
   ],
   imports: [
     BrowserModule,
