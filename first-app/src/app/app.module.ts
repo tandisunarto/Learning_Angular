@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BindingModule } from './binding/binding.module';
 
 import { AppComponent } from './app.component';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     BindingModule,
+    DirectivesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
