@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DirectivesComponent } from './directives.component';
+import { HighlightDirective } from './highlight.directive';
+import { MousehighlightDirective } from './mousehighlight.directive';
 
 @NgModule({
   imports: [
@@ -11,6 +13,8 @@ import { DirectivesComponent } from './directives.component';
   ],
   declarations: [
     DirectivesComponent,
+    HighlightDirective,
+    MousehighlightDirective,
   ]
 })
 export class DirectivesModule { }

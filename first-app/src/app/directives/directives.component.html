@@ -1,2 +1,7 @@
 <div [ngClass]="{border:true, background:true}">first method .. [ngClass]="border:true, background:true"</div>
 <div [class.border]="true" [class.background]="true">second method .. [class.border]="true" [class.background]="true"</div>
+<hr>
+<h3>Custom Attribute Directive</h3>
+<div highlight>Some Text</div>
+<div mousehighlight [defaultColor]="'silver'" [highlightColor]="'red'">More Text</div>
+
