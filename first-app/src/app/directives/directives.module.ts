@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DirectivesComponent } from './directives.component';
 import { HighlightDirective } from './highlight.directive';
 import { MousehighlightDirective } from './mousehighlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MousehighlightDirective } from './mousehighlight.directive';
     DirectivesComponent,
     HighlightDirective,
     MousehighlightDirective,
+    UnlessDirective,
   ]
 })
 export class DirectivesModule { }

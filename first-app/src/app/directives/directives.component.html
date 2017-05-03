@@ -1,7 +1,32 @@
+<h3>Attribute Directive (ngClass/ngStyle)</h3>
 <div [ngClass]="{border:true, background:true}">first method .. [ngClass]="border:true, background:true"</div>
 <div [class.border]="true" [class.background]="true">second method .. [class.border]="true" [class.background]="true"</div>
+<div [ngStyle]="{'background-color': 'black', 'color': 'silver'}">Using ngStyle</div>
 <hr>
 <h3>Custom Attribute Directive</h3>
 <div highlight>Some Text</div>
 <div mousehighlight [defaultColor]="'silver'" [highlightColor]="'red'">More Text</div>
-
+<h3>Structural Directive (*ngIf)</h3>
+<div *ngIf="showText">Conditional Text</div>
+<ng-template [ngIf]="showText">
+  <div>Another Conditional Text</div>
+</ng-template>
+<button (click)="onToggleText()">Hide</button>
+<ul>
+  <li *ngFor="let item of items; let i = index">({{i}}) {{item}}</li>
+</ul>
+<h3>ngSwitch</h3>
+<div [ngSwitch]="switchValue">
+  <div *ngSwitchCase="0">A</div>
+  <div *ngSwitchCase="1">B</div>
+  <div *ngSwitchCase="2">C</div>
+  <div *ngSwitchDefault>Z</div>
+</div>
+<div [ngSwitch]="switchValue">
+  <ng-template [ngSwitchCase]="0">A</ng-template>
+  <ng-template [ngSwitchCase]="1">B</ng-template>
+  <ng-template [ngSwitchCase]="2">C</ng-template>
+  <ng-template ngSwitchDefault>Z</ng-template>
+</div>
+<h3>Unless Custom Directive</h3>
+<div *unless="showText">Vikings</div>
