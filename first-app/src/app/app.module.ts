@@ -6,6 +6,7 @@ import { BindingModule } from './binding/binding.module';
 
 import { AppComponent } from './app.component';
 import { DirectivesModule } from './directives/directives.module';
+import { TemperatureModule } from 'app/services/temperature.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DirectivesModule } from './directives/directives.module';
     HttpModule,
     BindingModule,
     DirectivesModule,
+    TemperatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
