@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingridient } from 'app/shared';
 
 @Component({
   selector: 'rb-shopping-list',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ShoppingListComponent implements OnInit {
+  items: Ingridient[] = [];
 
   constructor() { }
 
