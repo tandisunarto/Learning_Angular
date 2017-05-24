@@ -8,9 +8,9 @@ import { RecipeBookComponent } from './recipe-book.component';
 import { RecipesComponent } from './recipes';
 import { RecipeListComponent,  RecipeItemComponent } from './recipes/recipe-list';
 import { RecipeDetailComponent } from './recipes/recipe-detail';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.component';
 import { DropdownDirective } from './dropdown.directive';
+import { RecipeService } from 'app/recipes';
+import { ShoppingListService, ShoppingListComponent, ShoppingListAddComponent } from 'app/shopping-list';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DropdownDirective } from './dropdown.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingListService],
   bootstrap: [RecipeBookComponent]
 })
 export class AppModule { }

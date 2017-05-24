@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingridient } from 'app/shared';
+import { ShoppingListService } from 'app/shopping-list';
 
 @Component({
   selector: 'rb-shopping-list',
@@ -9,9 +10,10 @@ import { Ingridient } from 'app/shared';
 export class ShoppingListComponent implements OnInit {
   items: Ingridient[] = [];
 
-  constructor() { }
+  constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
+    this.items = this.shoppingListService.getItem();
   }
 
 }
