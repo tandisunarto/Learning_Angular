@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingridient } from 'app/shared';
-import { ShoppingListService } from 'app/shopping-list';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'rb-shopping-list',

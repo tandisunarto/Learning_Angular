@@ -5,12 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { HeaderComponent } from './header.component';
 import { RecipeBookComponent } from './recipe-book.component';
-import { RecipesComponent } from './recipes';
+import { RecipeService, RecipesComponent } from './recipes';
 import { RecipeListComponent,  RecipeItemComponent } from './recipes/recipe-list';
 import { RecipeDetailComponent } from './recipes/recipe-detail';
 import { DropdownDirective } from './dropdown.directive';
-import { RecipeService } from 'app/recipes';
-import { ShoppingListService, ShoppingListComponent, ShoppingListAddComponent } from 'app/shopping-list';
+import { ShoppingListComponent, ShoppingListAddComponent, ShoppingListService } from './shopping-list';
 
 @NgModule({
   declarations: [

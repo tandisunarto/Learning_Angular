@@ -3,7 +3,7 @@ import { Ingridient } from 'app/shared';
 
 @Injectable()
 export class ShoppingListService {
-  private items: Ingridient[];
+  private items: Ingridient[] = [];
 
   constructor() { }
 

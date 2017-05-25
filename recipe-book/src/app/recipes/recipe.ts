@@ -4,6 +4,7 @@ export class Recipe {
     private _name: string;
     private _description: string;
     private _imagePath: string;
+    private _ingridients: Ingridient[];
 
     get name(): string {
         return this._name;
@@ -26,9 +27,17 @@ export class Recipe {
         this._imagePath = value;
     }
 
-    constructor(name: string, description: string, imagePath: string, ingridient: Ingridient[] ) {
+    get ingridients(): Ingridient[] {
+      return this._ingridients;
+    }
+    set ingridients(ingridients: Ingridient[]) {
+      this._ingridients = ingridients;
+    }
+
+    constructor(name: string, description: string, imagePath: string, ingridients: Ingridient[] ) {
         this.name = name;
         this.description = description;
         this.imagePath = imagePath;
+        this.ingridients = ingridients;
     }
 }
