@@ -10,6 +10,7 @@ import { TemperatureService } from "app/services/temperature.service";
 export class AppComponent {
   title = 'app works!';
   searchMessage = '';
+  currentDateTime: Date;
 
   constructor(private temperatureService: TemperatureService) { }
 
@@ -23,5 +24,9 @@ export class AppComponent {
 
   onSearchClick(value: string){
     this.searchMessage = value;
+  }
+
+  onShowTime(value: Date) {
+    this.currentDateTime = value;
   }
 }

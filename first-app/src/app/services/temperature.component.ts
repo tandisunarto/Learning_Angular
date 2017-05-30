@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-temperature',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
     <p>
       {{tempConversion}}
     </p>
+    <div (mouseover)="onMouseOverTime()">Time:</div>
   `,
   styles: []
 })
@@ -13,6 +14,8 @@ export class TemperatureComponent implements OnInit {
 
   @Input() c: number;
   @Input() f: number;
+
+  @Output() onShowTime: EventEmitter<Date> = new EventEmitter<Date>();
 
   tempConversion: string = '';
 
@@ -25,6 +28,10 @@ export class TemperatureComponent implements OnInit {
     if (this.f != undefined) {
       this.tempConversion = this.tempConversion + this.f + 'F = ' + (this.f - 32) / 1.8 + 'C';
     }
+  }
+
+  onMouseOverTime() {
+    this.onShowTime.emit(new Date());
   }
 
 }

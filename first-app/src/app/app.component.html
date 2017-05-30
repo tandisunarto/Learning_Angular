@@ -20,5 +20,6 @@
   <br>
   <app-directives></app-directives>
   <br>
-  <app-temperature [f]="101"></app-temperature>
+  <app-temperature [f]="101" (onShowTime)="onShowTime($event)"></app-temperature>
+  {{currentDateTime}}
 </h1>
