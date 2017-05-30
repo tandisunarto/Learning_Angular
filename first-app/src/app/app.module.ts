@@ -10,7 +10,7 @@ import { TemperatureModule } from 'app/services/temperature.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

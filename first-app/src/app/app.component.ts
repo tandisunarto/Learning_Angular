@@ -18,7 +18,7 @@ export class AppComponent {
   }
 
   onClickedTwo(value: string){
-    alert(value + ' ' + this.temperatureService.celcius2fahrenheit(38));
+    alert(value + ' ' + this.temperatureService.celcius2fahrenheit(38) + 'F');
   }
 
   onSearchClick(value: string){
