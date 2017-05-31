@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TemperatureService } from "app/services/temperature.service";
+import { TemperatureService } from 'app/services/temperature.service';
 
 @Component({
   moduleId: module.id,

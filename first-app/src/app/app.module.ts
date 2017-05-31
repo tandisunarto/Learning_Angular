@@ -8,11 +8,14 @@ import { AppComponent } from './app.component';
 import { DirectivesModule } from './directives/directives.module';
 import { TemperatureModule } from 'app/services/temperature.module';
 import { HeaderComponent } from './header.component';
+import { AdminComponent } from './admin/admin.component';
+import { LearnRoutingModule } from 'app/learn-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { HeaderComponent } from './header.component';
     HttpModule,
     BindingModule,
     DirectivesModule,
-    TemperatureModule
+    TemperatureModule,
+    LearnRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent]
