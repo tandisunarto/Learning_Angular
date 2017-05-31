@@ -9,6 +9,11 @@ import { DirectivesModule } from './directives/directives.module';
 import { TemperatureModule } from 'app/services/temperature.module';
 import { HeaderComponent } from './header.component';
 import { AdminComponent } from './admin/admin.component';
+
+// *** fewer lines of codes option for routing ***
+import { routing } from 'app/learn-routing.module';
+
+// *** this is another option for routing ***
 import { LearnRoutingModule } from 'app/learn-routing.module';
 
 @NgModule({
@@ -24,7 +29,8 @@ import { LearnRoutingModule } from 'app/learn-routing.module';
     BindingModule,
     DirectivesModule,
     TemperatureModule,
-    LearnRoutingModule
+    routing, // *** fewer lines of codes option for routing ***
+    // LearnRoutingModule // *** this is another option for routing ***
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent]
