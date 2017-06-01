@@ -8,7 +8,7 @@ import { TemperatureService } from 'app/services/temperature.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'App Works !';
   searchMessage = '';
   currentDateTime: Date;
 
