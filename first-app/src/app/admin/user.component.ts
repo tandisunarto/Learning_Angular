@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
     <a [routerLink]="['/user']">User</a>
     <button (click)="onNavigate()">Go Home</button>
     {{id}}
+    <router-outlet></router-outlet>
   `,
   styles: []
 })

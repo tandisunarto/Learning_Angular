@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from 'app/admin/admin.component';
 import { UserComponent } from 'app/admin/user.component';
+import { USER_ROUTES } from 'app/admin/user.route';
 
 const APP_ROUTES: Routes = [
   {path: 'admin', component: AdminComponent},
-  {path: 'user/:id', component: UserComponent}
+  {path: 'user/:id', component: UserComponent},
+  {path: 'user/:id', component: UserComponent, children: USER_ROUTES}
 ];
 
 // *** fewer lines of codes option for routing ***
