@@ -1,6 +1,7 @@
   <a [routerLink]="['/']">Home</a>
   <a [routerLink]="['/admin']">Admin</a>
-  <a [routerLink]="['/user']">User</a>
+  <input type="text" #id (input)="0">
+  <a [routerLink]="['/user', id.value]">User</a>
   <router-outlet></router-outlet>
   <div>
     {{title}}

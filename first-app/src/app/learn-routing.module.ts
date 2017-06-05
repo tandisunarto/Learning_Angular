@@ -6,7 +6,7 @@ import { UserComponent } from 'app/admin/user.component';
 
 const APP_ROUTES: Routes = [
   {path: 'admin', component: AdminComponent},
-  {path: 'user', component: UserComponent}
+  {path: 'user/:id', component: UserComponent}
 ];
 
 // *** fewer lines of codes option for routing ***
