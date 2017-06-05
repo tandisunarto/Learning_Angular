@@ -1,7 +1,8 @@
-  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['/']" [queryParams]="{analytic: 500}">Home</a>
   <a [routerLink]="['/admin']">Admin</a>
   <input type="text" #id (input)="0">
   <a [routerLink]="['/user', id.value]">User</a>
+  {{param}}
   <router-outlet></router-outlet>
   <div>
     {{title}}

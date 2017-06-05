@@ -12,12 +12,12 @@ import { Subscription } from 'rxjs/Subscription';
   `,
   styles: []
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   private id: number;
   private subscription: Subscription;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    activatedRoute.params.subscribe(
+    this.subscription = activatedRoute.params.subscribe(
       (param: any) => this.id = param['id']
     );
   }
@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
   }
 
   onNavigate() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'], {queryParams: {'analytic': '100'}});
   }
 
 }
