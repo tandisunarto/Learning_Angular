@@ -6,9 +6,10 @@ import { UserComponent } from 'app/admin/user.component';
 import { USER_ROUTES } from 'app/admin/user.route';
 
 const APP_ROUTES: Routes = [
-  {path: 'admin', component: AdminComponent},
-  {path: 'user/:id', component: UserComponent},
-  {path: 'user/:id', component: UserComponent, children: USER_ROUTES}
+  { path: 'admin', component: AdminComponent },
+  { path: 'user/:id', component: UserComponent },
+  { path: 'user/:id', component: UserComponent, children: USER_ROUTES },
+  { path: '**', redirectTo: 'user/99', pathMatch: 'full' },
 ];
 
 // *** fewer lines of codes option for routing ***

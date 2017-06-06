@@ -6,7 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
   selector: 'app-user',
   template: `
     <h2>User Page Header !</h2>
-    <a [routerLink]="['/user']">User</a>
+    <a [routerLink]="['detail']">Detail</a>
+    <a [routerLink]="['edit']">Edit</a>
     <button (click)="onNavigate()">Go Home</button>
     {{id}}
     <router-outlet></router-outlet>
