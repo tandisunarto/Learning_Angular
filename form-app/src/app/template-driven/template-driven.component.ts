@@ -5,12 +5,18 @@ import { NgForm } from '@angular/forms';
   selector: 'app-template-driven',
   templateUrl: './template-driven.component.html',
   styles: [`
-    .ng-invalid {
+    input.ng-invalid {
       border: solid 1px red;
     }
   `]
 })
 export class TemplateDrivenComponent implements OnInit {
+
+  private user = {
+    username: 'tandi',
+    password: 'secret',
+    email: 'tandi@hotmail.com'
+  }
 
   constructor() { }
 
@@ -20,6 +26,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     
-    console.log(form.valid + ' - ' + form.value.username)
+    console.log(form)
+    console.log(this.user)
   }
 }
