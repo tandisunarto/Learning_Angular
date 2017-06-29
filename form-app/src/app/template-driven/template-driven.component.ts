@@ -15,18 +15,23 @@ export class TemplateDrivenComponent implements OnInit {
   private user = {
     username: 'tandi',
     password: 'secret',
-    email: 'tandi@hotmail.com'
+    email: 'tandi@hotmail.com',
+    gender: 'male'
   }
+
+  genders: string[] = [
+    'male',
+    'female'
+  ]
 
   constructor() { }
 
   ngOnInit() {
     console.log('onInit');
-  }
+  }  
 
-  onSubmit(form: NgForm) {
-    
-    console.log(form)
+  onSubmit(form: NgForm) {    
+    console.log(form.value)
     console.log(this.user)
   }
 }
