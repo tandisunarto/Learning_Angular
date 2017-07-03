@@ -9,6 +9,7 @@ import { ShoppingListService } from './shopping-list.service';
 })
 export class ShoppingListComponent implements OnInit {
   items: Ingridient[] = [];
+  selectedItem: Ingridient = null;
 
   constructor(private shoppingListService: ShoppingListService) { }
 
@@ -16,4 +17,11 @@ export class ShoppingListComponent implements OnInit {
     this.items = this.shoppingListService.getItem();
   }
 
+  onSelectItem(item: Ingridient){
+    this.selectedItem = item;
+  }
+
+  onCleared(value) {
+    this.selectedItem = value;
+  }
 }
