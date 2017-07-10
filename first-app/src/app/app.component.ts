@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AppComponent implements OnDestroy {
   title = 'App Works !';
+  counter = 5;
   searchMessage = '';
   currentDateTime: Date;
   param: string;

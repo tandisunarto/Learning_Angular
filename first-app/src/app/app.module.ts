@@ -15,6 +15,7 @@ import { routing } from 'app/learn-routing.module';
 
 // *** this is another option for routing ***
 import { LearnRoutingModule } from 'app/learn-routing.module';
+import { PipeModule } from 'app/pipe/pipe.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LearnRoutingModule } from 'app/learn-routing.module';
     DirectivesModule,
     TemperatureModule,
     AdminModule,
+    PipeModule,
     routing, // *** fewer lines of codes option for routing ***
     // LearnRoutingModule // *** this is another option for routing ***
   ],
