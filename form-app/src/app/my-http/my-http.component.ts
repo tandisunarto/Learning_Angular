@@ -9,6 +9,7 @@ import { Response } from '@angular/http';
   providers: [MyHttpService]
 })
 export class MyHttpComponent implements OnInit {
+  items: any[] = [];
 
   constructor(private myHttpService: MyHttpService) { }
 
@@ -22,11 +23,24 @@ export class MyHttpComponent implements OnInit {
   onSubmit(username: string, email: string) {
     this.myHttpService.sendData(
       {
-        username: username, 
+        username: username,
         email: email
       })
       .subscribe(
         (data) => console.log(data)
       );
+  }
+
+  onGetData() {
+    this.myHttpService.getOwnData()
+      .subscribe(data => {
+        const myArray = [];
+        for (const key in data) {
+          if (data.hasOwnProperty(key)) {
+            myArray.push(data[key]);
+          }
+        }
+        this.items = myArray;
+      });
   }
 }

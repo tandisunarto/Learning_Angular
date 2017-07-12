@@ -9,9 +9,7 @@ export class MyHttpService {
 
   getData() {
     return this.http.get('https://angular2-lesson-a04a9.firebaseio.com/title.json')
-      .map(
-        (response: Response) => response.json()
-      );
+      .map((response: Response) => response.json());
   }
 
   sendData(user: any) {
@@ -24,5 +22,10 @@ export class MyHttpService {
       headers: headerData
     })
     .map((data: Response) => data.json());
+  }
+
+  getOwnData() {
+    return this.http.get('https://angular2-lesson-a04a9.firebaseio.com/data.json')
+      .map((response: Response) => response.json());
   }
 }
