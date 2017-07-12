@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyHttpService } from './my-http.service';
 import { Response } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-my-http',
@@ -10,6 +11,7 @@ import { Response } from '@angular/http';
 })
 export class MyHttpComponent implements OnInit {
   items: any[] = [];
+  asyncString: Observable<any> = this.myHttpService.getData();
 
   constructor(private myHttpService: MyHttpService) { }
 
@@ -27,7 +29,8 @@ export class MyHttpComponent implements OnInit {
         email: email
       })
       .subscribe(
-        (data) => console.log(data)
+        (data) => console.log(data),
+        (error) => console.log(error)
       );
   }
 
