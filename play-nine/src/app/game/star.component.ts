@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarComponent implements OnInit {
 
-  constructor() { }
+  numberOfStars = Math.floor(Math.random() * 9);
+  stars = [];
+  constructor() {
+    for (let i = 0; i < this.numberOfStars ; i ++) {
+      this.stars.push(i);
+    }
+  }
 
   ngOnInit() {
   }
