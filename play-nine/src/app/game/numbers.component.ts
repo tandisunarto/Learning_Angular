@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-numbers',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NumbersComponent implements OnInit {
 
-  constructor() { }
+  @Input() selectedNumbers: number[] = [];
+
+  numbers = [];
+  constructor() {
+    this.numbers = _.range(1, 10);
+   }
 
   ngOnInit() {
   }

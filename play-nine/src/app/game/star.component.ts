@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-star',
@@ -6,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class StarComponent implements OnInit {
+  numberOfStars = [];
 
-  numberOfStars = Math.floor(Math.random() * 9);
-  stars = [];
   constructor() {
-    for (let i = 0; i < this.numberOfStars ; i ++) {
-      this.stars.push(i);
-    }
+    this.numberOfStars = _.range(0, Math.floor(Math.random() * 9) + 1);
   }
 
   ngOnInit() {

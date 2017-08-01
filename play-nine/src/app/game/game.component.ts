@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class GameComponent implements OnInit {
+  state = {
+    selectedNumbers: [3, 7]
+  };
 
   constructor() { }
 

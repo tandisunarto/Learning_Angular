@@ -2,6 +2,6 @@
 <div class="row space-buttom">
   <app-star class="col-5"></app-star>
   <app-game-button class="col-2"></app-game-button>
-  <app-answer class="col-5"></app-answer>
+  <app-answer [selectedNumbers]="state.selectedNumbers" class="col-5"></app-answer>
 </div>
-<app-numbers>
+<app-numbers [selectedNumbers]="state.selectedNumbers">
