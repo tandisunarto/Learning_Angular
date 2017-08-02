@@ -1,5 +1,7 @@
 <div class="card text-center">
   <div>
-    <span *ngFor="let number of numbers" [attr.class]="selectedNumbers.indexOf(number) >= 0 ? 'selected': 'none'">{{number}}</span>
+    <span *ngFor="let number of numbers" 
+      [attr.class]="selectedNumbers.indexOf(number) >= 0 ? 'selected': 'none'"
+      (click)="onNumberClick(number)">{{number}}</span>
   </div>
 </div>

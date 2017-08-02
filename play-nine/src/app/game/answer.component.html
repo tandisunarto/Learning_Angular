@@ -1,3 +1,4 @@
 <div>
-  <span *ngFor="let number of selectedNumbers">{{number}}</span>
+  <span *ngFor="let number of selectedNumbers"
+    (click)="onNumberClicked(number)">{{number}}</span>
 </div>

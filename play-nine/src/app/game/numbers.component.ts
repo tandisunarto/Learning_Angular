@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as _ from 'lodash';
 
 @Component({
@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 export class NumbersComponent implements OnInit {
 
   @Input() selectedNumbers: number[] = [];
+  @Output() numberClicked: EventEmitter<number> = new EventEmitter<number>();
 
   numbers = [];
   constructor() {
@@ -18,4 +19,7 @@ export class NumbersComponent implements OnInit {
   ngOnInit() {
   }
 
+  onNumberClick(number) {
+    this.numberClicked.emit(number);
+  }
 }
