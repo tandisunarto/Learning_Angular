@@ -1,3 +1,5 @@
 <div>
-  <Button class="btn btn-primary" [disabled]="selectedNumbers.length === 0">=</Button>
+  <Button class="btn {{btnAnswer}} {{btnIcon}}" 
+    (click)="onClicked()"
+    [disabled]="selectedNumbers.length === 0"></Button>
 </div>

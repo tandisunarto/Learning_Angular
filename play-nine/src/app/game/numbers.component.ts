@@ -7,8 +7,8 @@ import * as _ from 'lodash';
   styles: []
 })
 export class NumbersComponent implements OnInit {
-
   @Input() selectedNumbers: number[] = [];
+  @Input() usedNumbers: number[];
   @Output() numberClicked: EventEmitter<number> = new EventEmitter<number>();
 
   numbers = [];
@@ -21,5 +21,16 @@ export class NumbersComponent implements OnInit {
 
   onNumberClick(number) {
     this.numberClicked.emit(number);
+  }
+
+  numberClassName(number): string {
+    let className = 'none';
+    if (this.usedNumbers.indexOf(number) >= 0) {
+      className = 'used';
+    } else if (this.selectedNumbers.indexOf(number) >= 0) {
+      className = 'selected';
+    }
+
+    return className;
   }
 }

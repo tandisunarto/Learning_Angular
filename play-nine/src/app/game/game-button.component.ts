@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-game-button',
@@ -6,10 +6,13 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
   styles: []
 })
 export class GameButtonComponent implements OnInit, OnChanges {
-
   @Input() selectedNumbers: number[];
+  @Input() numberOfStars: number;
+  @Input() answerIsCorrect: boolean;
+  @Output() buttonClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  selected = 'true';
+  btnAnswer: string;
+  btnIcon: string;
 
   constructor() {
   }
@@ -17,7 +20,22 @@ export class GameButtonComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
+  onClicked() {
+    this.answerIsCorrect = this.numberOfStars === this.selectedNumbers.reduce((acc, n) => acc + n, 0);
+    // why am I emitting this result ?
+    this.buttonClicked.emit(this.answerIsCorrect);
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.selectedNumbers.length);
+    if (this.answerIsCorrect === true) {
+      this.btnAnswer = 'btn-success';
+      this.btnIcon = 'fa fa-check';
+    } else if (this.answerIsCorrect === false) {
+      this.btnAnswer = 'btn-danger';
+      this.btnIcon = 'fa fa-times';
+    } else {
+      this.btnAnswer = 'btn-default';
+      this.btnIcon = 'fa fa-check';
+    }
   }
 }

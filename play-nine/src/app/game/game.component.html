@@ -1,7 +1,15 @@
 <h3>Play Nine</h3>
 <div class="row space-buttom">
   <app-star [numberOfStars]="numberOfStars" class="col-5"></app-star>
-  <app-game-button [selectedNumbers]="selectedNumbers" class="col-2"></app-game-button>
+  <app-game-button 
+    [selectedNumbers]="selectedNumbers" 
+    [numberOfStars]="numberOfStars.length"
+    [answerIsCorrect]="answerIsCorrect"
+    (buttonClicked)="onButtonClicked($event)"
+    class="col-2"></app-game-button>
   <app-answer [selectedNumbers]="selectedNumbers" (numberClicked)="onUnselecteNumberClicked($event)" class="col-5"></app-answer>
 </div>
-<app-numbers [selectedNumbers]="selectedNumbers" (numberClicked)="onNumberClicked($event)">
+<app-numbers 
+  [selectedNumbers]="selectedNumbers" 
+  [usedNumbers]="usedNumbers"
+  (numberClicked)="onNumberClicked($event)">
