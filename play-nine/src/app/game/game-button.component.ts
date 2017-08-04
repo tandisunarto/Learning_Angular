@@ -9,7 +9,7 @@ export class GameButtonComponent implements OnInit, OnChanges {
   @Input() selectedNumbers: number[];
   @Input() numberOfStars: number;
   @Input() answerIsCorrect: boolean;
-  @Output() buttonClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
 
   btnAnswer: string;
   btnIcon: string;
@@ -21,9 +21,13 @@ export class GameButtonComponent implements OnInit, OnChanges {
   }
 
   onClicked() {
-    this.answerIsCorrect = this.numberOfStars === this.selectedNumbers.reduce((acc, n) => acc + n, 0);
-    // why am I emitting this result ?
-    this.buttonClicked.emit(this.answerIsCorrect);
+    let answerIsFinal = false;
+    if (this.answerIsCorrect) {
+      answerIsFinal = true;
+    } else {
+      this.answerIsCorrect = this.numberOfStars === this.selectedNumbers.reduce((acc, n) => acc + n, 0);
+    }
+    this.buttonClicked.emit({answerIsCorrect: this.answerIsCorrect, answerIsFinal: answerIsFinal});
   }
 
   ngOnChanges(changes: SimpleChanges): void {

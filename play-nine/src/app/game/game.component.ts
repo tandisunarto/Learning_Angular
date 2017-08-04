@@ -10,7 +10,7 @@ export class GameComponent implements OnInit {
   selectedNumbers: number[] = [];
   numberOfStars: number[] =  _.range(0, Math.floor(Math.random() * 9) + 1);
   answerIsCorrect: boolean = null;
-  usedNumbers: number[] = [4, 7];
+  usedNumbers: number[] = [];
 
   ngOnInit() {
   }
@@ -29,7 +29,13 @@ export class GameComponent implements OnInit {
     this.selectedNumbers = this.selectedNumbers.filter((n) => n !== number);
   }
 
-  onButtonClicked(answerIsCorrect: boolean) {
-    this.answerIsCorrect = answerIsCorrect;
+  onButtonClicked(value) {
+    this.answerIsCorrect = value.answerIsCorrect;
+    if (value.answerIsFinal) {
+      this.usedNumbers = this.usedNumbers.concat(this.selectedNumbers);
+      this.selectedNumbers = [];
+      this.numberOfStars =  _.range(0, Math.floor(Math.random() * 9) + 1);
+      this.answerIsCorrect = null;
+    }
   }
 }
