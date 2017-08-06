@@ -5,7 +5,9 @@
     [selectedNumbers]="selectedNumbers" 
     [numberOfStars]="numberOfStars.length"
     [answerIsCorrect]="answerIsCorrect"
+    [redraws]="redraws"
     (buttonClicked)="onButtonClicked($event)"
+    (buttonRedrawClicked)="onButtonRedrawClicked($event)"
     class="col-2"></app-game-button>
   <app-answer [selectedNumbers]="selectedNumbers" (numberClicked)="onUnselecteNumberClicked($event)" class="col-5"></app-answer>
 </div>

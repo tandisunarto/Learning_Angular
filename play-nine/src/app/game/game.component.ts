@@ -11,6 +11,7 @@ export class GameComponent implements OnInit {
   numberOfStars: number[] =  _.range(0, Math.floor(Math.random() * 9) + 1);
   answerIsCorrect: boolean = null;
   usedNumbers: number[] = [];
+  redraws = 5;
 
   ngOnInit() {
   }
@@ -38,4 +39,13 @@ export class GameComponent implements OnInit {
       this.answerIsCorrect = null;
     }
   }
+
+  onButtonRedrawClicked(value) {
+    if (this.redraws > 0) {
+      this.selectedNumbers = [];
+      this.numberOfStars =  _.range(0, Math.floor(Math.random() * 9) + 1);
+      this.answerIsCorrect = null;
+      this.redraws--;
+    }
+    }
 }

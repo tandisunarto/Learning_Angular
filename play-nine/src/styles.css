@@ -38,3 +38,8 @@ span {
   color: #99bb99;
   cursor: not-allowed;
 }
+
+.button-redraw {
+  margin-top: 10px;
+  cursor: pointer;
+}

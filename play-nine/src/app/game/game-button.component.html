@@ -3,3 +3,7 @@
     (click)="onClicked()"
     [disabled]="selectedNumbers.length === 0"></Button>
 </div>
+<div>
+  <Button class="btn btn-warning button-redraw" [disabled]="redraws === 0"
+    (click)="onRedrawClicked()"><i class="fa fa-refresh"></i> {{redraws}}</Button>
+</div>
