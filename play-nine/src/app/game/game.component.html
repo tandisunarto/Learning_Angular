@@ -6,12 +6,16 @@
     [numberOfStars]="numberOfStars.length"
     [answerIsCorrect]="answerIsCorrect"
     [redraws]="redraws"
-    (buttonClicked)="onButtonClicked($event)"
+    (buttonAcceptClicked)="onButtonAcceptClicked($event)"
     (buttonRedrawClicked)="onButtonRedrawClicked($event)"
     class="col-2"></app-game-button>
   <app-answer [selectedNumbers]="selectedNumbers" (numberClicked)="onUnselecteNumberClicked($event)" class="col-5"></app-answer>
 </div>
-<app-numbers 
+<app-done-frame 
+  (resetGame)="onResetGame($event)"
+  [doneStatus]="doneStatus"
+  *ngIf="doneStatus"></app-done-frame>
+<app-numbers *ngIf="!doneStatus"
   [selectedNumbers]="selectedNumbers" 
   [usedNumbers]="usedNumbers"
-  (numberClicked)="onNumberClicked($event)">
+  (numberClicked)="onNumberClicked($event)"></app-numbers>

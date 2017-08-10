@@ -10,7 +10,7 @@ export class GameButtonComponent implements OnInit, OnChanges {
   @Input() numberOfStars: number;
   @Input() answerIsCorrect: boolean;
   @Input() redraws: number;
-  @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() buttonAcceptClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() buttonRedrawClicked: EventEmitter<any> = new EventEmitter<any>();
 
   btnAnswer: string;
@@ -22,14 +22,14 @@ export class GameButtonComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  onClicked() {
+  onAcceptClicked() {
     let answerIsFinal = false;
     if (this.answerIsCorrect) {
       answerIsFinal = true;
     } else {
       this.answerIsCorrect = this.numberOfStars === this.selectedNumbers.reduce((acc, n) => acc + n, 0);
     }
-    this.buttonClicked.emit({answerIsCorrect: this.answerIsCorrect, answerIsFinal: answerIsFinal});
+    this.buttonAcceptClicked.emit({answerIsCorrect: this.answerIsCorrect, answerIsFinal: answerIsFinal});
   }
 
   onRedrawClicked() {

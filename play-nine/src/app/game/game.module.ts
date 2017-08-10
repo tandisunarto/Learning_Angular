@@ -5,6 +5,7 @@ import { StarComponent } from './star.component';
 import { AnswerComponent } from './answer.component';
 import { GameButtonComponent } from './game-button.component';
 import { NumbersComponent } from './numbers.component';
+import { DoneFrameComponent } from './done-frame.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { NumbersComponent } from './numbers.component';
     AnswerComponent,
     GameButtonComponent,
     NumbersComponent,
+    DoneFrameComponent,
   ],
   exports: [
     GameComponent
