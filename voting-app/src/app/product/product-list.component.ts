@@ -9,7 +9,7 @@ import { Seed, Product } from '../model';
 })
 export class ProductListComponent implements OnInit {
 
-  Products: Product[] = new Seed().products;
+  Products: Product[] = new Seed().products.sort( (a, b) => (b.votes - a.votes));
 
   constructor() { }
 

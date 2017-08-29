@@ -1,1 +1,7 @@
-<app-product *ngFor="let product of Products" [product]="product" ></app-product>
+<div class="main ui text container">
+    <div class="content">
+        <div class="ui stackable items">
+            <app-product class="item" *ngFor="let product of Products" [product]="product"></app-product>
+        </div>
+    </div>
+</div>
