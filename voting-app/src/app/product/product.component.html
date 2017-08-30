@@ -3,7 +3,7 @@
 </div>
 <div class='middle aligned content'>
     <div class='header'>
-        <a><i class='large caret up icon'></i></a> {{product.votes}}
+        <a (click)="onUpVoteClick(product.id)"><i class='large caret up icon'></i></a> {{product.votes}}
     </div>
     <div class='description'>
         <a href={{product.url}}>{{product.title}}</a>

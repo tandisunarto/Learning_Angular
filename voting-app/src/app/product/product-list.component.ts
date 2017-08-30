@@ -9,11 +9,14 @@ import { Seed, Product } from '../model';
 })
 export class ProductListComponent implements OnInit {
 
-  Products: Product[] = new Seed().products.sort( (a, b) => (b.votes - a.votes));
+  products: Product[] = new Seed().products.sort( (a, b) => (b.votes - a.votes));
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onUpVoteClicked(productId) {
+    console.log(productId + ' was clicked in child componenet');
+  }
 }
