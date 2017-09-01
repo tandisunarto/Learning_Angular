@@ -9,14 +9,31 @@ import { Seed, Product } from '../model';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[] = new Seed().products.sort( (a, b) => (b.votes - a.votes));
+  products: Product[] = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.products = new Seed().products.sort( (a, b) => (b.votes - a.votes));
   }
 
   onUpVoteClicked(productId) {
-    console.log(productId + ' was clicked in child componenet');
+    const updatedProducts = this.products.map(
+      (product) => {
+        if (product.id === productId) {
+          return Object.assign(
+            {},
+            product,
+            {
+              votes: product.votes + 1
+            }
+          );
+        } else {
+          return product;
+        }
+      }
+    );
+
+    this.products = updatedProducts;
   }
 }
