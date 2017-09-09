@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+#main {
+  margin-top: 6em;
+}
+
+#content {
+  margin-top: 3em;
+}
+
+.editable-timer {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}

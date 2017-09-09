@@ -1,4 +1,4 @@
-const TimerSeed = [
+export const TimerSeed = [
     {
         title: 'Learn React',
         project: 'Web Domination',

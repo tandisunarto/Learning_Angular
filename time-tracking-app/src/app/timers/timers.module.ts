@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { TimersDashboardComponent } from './timers-dashboard.component';
 import { EditableTimerListComponent } from './editable-timers/editable-timer-list.component';
 import { ToggleableTimerFormComponent } from './toggleable-timers/toggleable-timer-form.component';
+import { TimerComponent } from './editable-timers/timer.component';
+import { TimerFormComponent } from './editable-timers/timer-form.component';
+import { EditableTimerComponent } from './editable-timers/editable-timer.component';
 
 @NgModule({
   imports: [
@@ -11,7 +14,10 @@ import { ToggleableTimerFormComponent } from './toggleable-timers/toggleable-tim
   declarations: [
     TimersDashboardComponent,
     EditableTimerListComponent,
-    ToggleableTimerFormComponent
+    ToggleableTimerFormComponent,
+    TimerComponent,
+    TimerFormComponent,
+    EditableTimerComponent
   ],
   exports: [
     TimersDashboardComponent
