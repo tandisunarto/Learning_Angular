@@ -7,10 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TimerFormComponent implements OnInit {
   @Input() timer: any;
-
+  submitText= this.timer == null ? 'Create' : 'Update';
   constructor() { }
 
   ngOnInit() {
+    if (this.timer === null) {
+      this.timer = {
+        title: '',
+        project: ''
+      }
+    }
   }
 
 }

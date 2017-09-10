@@ -13,8 +13,7 @@ export class TimerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.elapsedString = Helpers.renderElapsedString(this.timer.elapsed);
-    console.log(Helpers);
+    this.elapsedString = new Helpers().renderElapsedString(this.timer.elapsed, null);
   }
 
 }

@@ -1,3 +1,10 @@
-<p>
-  toggleable-timer-form works!
-</p>
+<div class="ui centered card">
+  <div class="content">
+    <app-timer-form *ngIf="isOpen" [timer]=null></app-timer-form>
+    <div *ngIf="!isOpen" class='ui basic content center aligned'>
+      <button class='ui basic button icon'>
+        <i class='plus icon'></i>
+      </button>
+    </div>
+  </div>
+</div>

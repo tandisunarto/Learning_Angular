@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimersDashboardComponent implements OnInit {
 
+  isOpen = true;
+
   constructor() { }
 
   ngOnInit() {
