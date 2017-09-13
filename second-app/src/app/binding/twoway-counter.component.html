@@ -1,3 +1,16 @@
-<p>
-  twoway-counter works!
-</p>
+<span class="radioClass">Show: </span>
+
+<input type="radio" name="options" value="all" 
+  [(ngModel)]="selectedGenderValue" 
+  (change)="onGenderChanged()">
+<span class="radioClass">{{"All (" + all + ")"}}</span>
+
+<input type="radio" name="options" value="male" 
+  [(ngModel)]="selectedGenderValue" 
+  (change)="onGenderChanged()">
+<span class="radioClass">{{"Male (" + male + ")"}}</span>
+
+<input type="radio" name="options" value="female" 
+  [(ngModel)]="selectedGenderValue" 
+  (change)="onGenderChanged()">
+<span class="radioClass">{{"Female (" + female + ")"}}</span>

@@ -19,7 +19,7 @@ const employees: any[] = [
   },
   {
     name: 'Kate Spring',
-    gender: 'male'
+    gender: 'female'
   },
 ];
 
@@ -33,6 +33,18 @@ export class TwowayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  employeeCount(gender): number {
+    if (gender === 'all') {
+      return employees.length;
+    }
+
+    const filteredEmployees = employees.filter(e => e.gender === gender);
+    return filteredEmployees.length;
+  }
+
+  onGenderChanged(gender) {
   }
 
 }

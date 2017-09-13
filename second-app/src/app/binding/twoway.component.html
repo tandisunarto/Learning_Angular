@@ -1,4 +1,9 @@
-<app-twoway-counter>
+<app-twoway-counter
+[all]="employeeCount('all')"
+[male]="employeeCount('male')"
+[female]="employeeCount('female')"
+(genderChanged)="onGenderChanged($event)"
+>
 </app-twoway-counter>
 <app-twoway-employee-list>
 </app-twoway-employee-list>
