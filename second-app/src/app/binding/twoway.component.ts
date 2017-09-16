@@ -1,26 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 const employees: any[] = [
-  {
-    name: 'John Doe',
-    gender: 'male'
-  },
-  {
-    name: 'Marilyn Monroe',
-    gender: 'female'
-  },
-  {
-    name: 'John Kennedy',
-    gender: 'male'
-  },
-  {
-    name: 'Sam Walton',
-    gender: 'male'
-  },
-  {
-    name: 'Kate Spring',
-    gender: 'female'
-  },
+  { name: 'John Doe', gender: 'male' },
+  { name: 'Marilyn Monroe', gender: 'female' },
+  { name: 'John Kennedy', gender: 'male' },
+  { name: 'Sam Walton', gender: 'male' },
+  { name: 'Kate Spring', gender: 'female' },
 ];
 
 @Component({
@@ -29,6 +14,8 @@ const employees: any[] = [
   styles: []
 })
 export class TwowayComponent implements OnInit {
+
+  gender = 'all';
 
   constructor() { }
 
@@ -45,6 +32,15 @@ export class TwowayComponent implements OnInit {
   }
 
   onGenderChanged(gender) {
+    this.gender = gender;
+  }
+
+  getEmployeesByGender() {
+    if (this.gender === 'all') {
+      return employees;
+    }
+
+    return employees.filter((e) => e.gender === this.gender);
   }
 
 }

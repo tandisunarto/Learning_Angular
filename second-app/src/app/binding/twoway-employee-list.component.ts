@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-twoway-employee-list',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwowayEmployeeListComponent implements OnInit {
 
+  @Input() employees;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.employees);
   }
 
 }

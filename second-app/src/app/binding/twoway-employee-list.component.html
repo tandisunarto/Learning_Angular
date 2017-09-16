@@ -1,3 +1,10 @@
-<p>
-  twoway-employee-list works!
-</p>
+<table style="border: solid 1px">
+  <tr>
+    <td style="width: 200px">Name</td>
+    <td style="width: 100px">Gender</td>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.name}}</td>
+    <td>{{employee.gender}}</td>
+  </tr>
+</table>

@@ -25,6 +25,7 @@ export class TwowayCounterComponent implements OnInit {
   }
 
   onGenderChanged() {
+    console.log(this);
     this.genderChanged.emit(this.selectedGenderValue);
   }
 
