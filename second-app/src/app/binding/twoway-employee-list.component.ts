@@ -12,7 +12,6 @@ export class TwowayEmployeeListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.employees);
   }
 
 }

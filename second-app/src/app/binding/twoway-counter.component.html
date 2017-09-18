@@ -14,3 +14,12 @@
   [(ngModel)]="selectedGenderValue" 
   (change)="onGenderChanged()">
 <span class="radioClass">{{"Female (" + female + ")"}}</span>
+
+<input type="text"
+value="test 1"
+[(ngModel)]="myInput"
+(change)="onMyInputChanged()">
+<input type="text"
+value="test 2"
+[(ngModel)]="myInput"
+(change)="onMyInputChanged()">

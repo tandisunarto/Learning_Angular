@@ -18,15 +18,20 @@ export class TwowayCounterComponent implements OnInit {
   @Output() genderChanged: EventEmitter<string> = new EventEmitter<string>();
 
   selectedGenderValue = 'all';
+  myInput: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onGenderChanged() {
-    console.log(this);
+  onGenderChanged(myEvent) {
+    console.log(this.selectedGenderValue);
     this.genderChanged.emit(this.selectedGenderValue);
+  }
+
+  onMyInputChanged() {
+    console.log(this.myInput);
   }
 
 }
