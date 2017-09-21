@@ -7,10 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EditableTimerComponent implements OnInit {
   @Input() timer: any;
+  editFormOpen: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.editFormOpen = true;
+  }
+
+  onCancelClicked(p) {
+    this.editFormOpen = false;
   }
 
 }

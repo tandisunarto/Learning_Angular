@@ -6,11 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: []
 })
 export class ToggleableTimerFormComponent implements OnInit {
-  @Input() isOpen;
+  isOpen: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.isOpen = false;
+  }
+
+  onOpenClick() {
+    this.isOpen = true;
+  }
+
+  onCancelClicked(event: any) {
+    this.isOpen = false;
+  }
+
+  onSubmitClicked(event: any) {
+    this.isOpen = false;
   }
 
 }

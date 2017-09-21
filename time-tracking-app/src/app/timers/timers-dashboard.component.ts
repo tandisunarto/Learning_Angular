@@ -9,12 +9,10 @@ import { TimerSeed } from 'seed';
 export class TimersDashboardComponent implements OnInit {
 
   timers: any[] = TimerSeed;
-  isOpen = false;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.timers);
   }
 
 }

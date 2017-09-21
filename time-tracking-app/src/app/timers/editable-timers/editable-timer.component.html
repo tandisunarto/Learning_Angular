@@ -1,3 +1,8 @@
-<app-timer-form class='ui centered card editable-timer' *ngIf="timer.editFormOpen" [timer]="timer">
+<app-timer-form class='ui centered card editable-timer' 
+    *ngIf="editFormOpen"
+    (cancelClicked)="onCancelClicked()"
+    [timer]="timer">
 </app-timer-form>
-<app-timer class='ui centered card editable-timer' *ngIf="!timer.editFormOpen" [timer]="timer"></app-timer>
+<app-timer class='ui centered card editable-timer' 
+    *ngIf="!editFormOpen" 
+    [timer]="timer"></app-timer>

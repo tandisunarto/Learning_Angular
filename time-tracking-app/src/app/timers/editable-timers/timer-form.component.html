@@ -2,17 +2,19 @@
   <div class='ui form'>
     <div class='field'>
       <label>Title</label>
-      <input type='text' defaultValue={{timer.title}} />
+      <input type='text' [(ngModel)]="timer.title" />
     </div>
     <div class='field'>
       <label>Project</label>
-      <input type='text' defaultValue={{timer.project}} />
+      <input type='text' [(ngModel)]="timer.project" />
     </div>
     <div class='ui two bottom attached buttons'>
-      <button class='ui basic blue button'>
+      <button class='ui basic blue button'
+        (click)="onSubmitClicked()">
                   {{submitText}}
               </button>
-      <button class='ui basic red button'>
+      <button class='ui basic red button'
+        (click)="onCancelClicked()">
                   Cancel
               </button>
     </div>
