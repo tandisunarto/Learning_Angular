@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TimerSeed } from 'seed';
 
 @Component({
@@ -7,7 +7,7 @@ import { TimerSeed } from 'seed';
   styles: []
 })
 export class EditableTimerListComponent implements OnInit {
-  readonly timers: any[] = TimerSeed;
+  @Input() timers;
 
   constructor() { }
 

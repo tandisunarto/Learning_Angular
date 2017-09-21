@@ -1,6 +1,8 @@
 <div class="ui three column centered grid">
   <div class="column">
-    <app-editable-timer-list></app-editable-timer-list>
+    <app-editable-timer-list
+      [timers]="timers"
+      ></app-editable-timer-list>
     <app-toggleable-timer-form [isOpen]="isOpen"></app-toggleable-timer-form>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimerSeed } from 'seed';
 
 @Component({
   selector: 'app-timers-dashboard',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimersDashboardComponent implements OnInit {
 
-  isOpen = true;
+  timers: any[] = TimerSeed;
+  isOpen = false;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.timers);
   }
 
 }
