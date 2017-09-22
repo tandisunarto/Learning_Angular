@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toggleable-timer-form',
@@ -6,6 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: []
 })
 export class ToggleableTimerFormComponent implements OnInit {
+
+  @Output() createClicked: EventEmitter<any> = new EventEmitter<any>();
+
   isOpen: boolean;
 
   constructor() { }
@@ -22,8 +25,9 @@ export class ToggleableTimerFormComponent implements OnInit {
     this.isOpen = false;
   }
 
-  onSubmitClicked(timer) {
+  onCreateClicked(timer) {
     this.isOpen = false;
+    this.createClicked.emit(timer);
   }
 
 }

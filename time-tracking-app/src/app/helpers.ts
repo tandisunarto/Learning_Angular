@@ -1,9 +1,11 @@
+import * as v4 from '../../node_modules/uuid/v4';
+
 export class Helpers {
-    newTimer(attrs) {
+  newTimer(attrs) {
     const timer = {
       title: attrs.title || 'Timer',
       project: attrs.project || 'Project',
-      // id: uuid.v4(), // eslint-disable-line no-undef
+      id: v4(), // eslint-disable-line no-undef
       elapsed: 0,
     };
 

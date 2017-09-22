@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TimerSeed } from 'seed';
+import { Helpers } from '../helpers';
 
 @Component({
   selector: 'app-timers-dashboard',
@@ -13,6 +14,11 @@ export class TimersDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onCreateClicked(timer) {
+    const newTimer = new Helpers().newTimer(timer);
+    this.timers = this.timers.concat(newTimer);
   }
 
 }

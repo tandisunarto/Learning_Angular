@@ -12,7 +12,7 @@ export class EditableTimerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.editFormOpen = true;
+    this.editFormOpen = false;
   }
 
   onCancelClicked(p) {

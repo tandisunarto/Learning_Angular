@@ -19,7 +19,6 @@ export class TimerFormComponent implements OnInit {
     this.submitText = this.timer == null ? 'Create' : 'Update';
     if (this.timer == null) {
       this.timer = {
-        id: v4(),
         title: '',
         project: ''
       }

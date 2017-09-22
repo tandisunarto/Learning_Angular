@@ -1,7 +1,7 @@
 <div class="ui centered card">
   <div class="content">
     <app-timer-form *ngIf="isOpen" 
-      (submitClicked)="onSubmitClicked($event)"
+      (submitClicked)="onCreateClicked($event)"
       (cancelClicked)="onCancelClicked($event)"
       [timer]=null></app-timer-form>
     <div *ngIf="!isOpen" class='ui basic content center aligned'>
