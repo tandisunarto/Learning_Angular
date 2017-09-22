@@ -18,11 +18,11 @@ export class ToggleableTimerFormComponent implements OnInit {
     this.isOpen = true;
   }
 
-  onCancelClicked(event: any) {
+  onCancelClicked() {
     this.isOpen = false;
   }
 
-  onSubmitClicked(event: any) {
+  onSubmitClicked(timer) {
     this.isOpen = false;
   }
 

@@ -31,7 +31,6 @@ export class TimerFormComponent implements OnInit {
   }
 
   onSubmitClicked() {
-    console.log(this.timer);
-    this.submitClicked.emit();
+    this.submitClicked.emit(this.timer);
   }
 }
