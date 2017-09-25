@@ -1,6 +1,7 @@
 <div class="ui three column centered grid">
   <div class="column">
     <app-editable-timer-list
+      (actionButtonClick)="onActionButtonClick($event)"
       [timers]="timers">
     </app-editable-timer-list>
     <app-toggleable-timer-form

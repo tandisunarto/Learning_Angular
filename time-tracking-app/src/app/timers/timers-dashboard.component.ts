@@ -21,4 +21,7 @@ export class TimersDashboardComponent implements OnInit {
     this.timers = this.timers.concat(newTimer);
   }
 
+  onActionButtonClick(timerId) {
+    console.log('TimersDashboardComponent: ' + timerId);
+  }
 }

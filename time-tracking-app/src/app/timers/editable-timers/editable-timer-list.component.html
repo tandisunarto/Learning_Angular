@@ -1,3 +1,6 @@
 <div id="timers">
-  <app-editable-timer *ngFor="let timer of timers" [timer]="timer"></app-editable-timer>
+  <app-editable-timer 
+    *ngFor="let timer of timers" 
+    (actionButtonClick)="onActionButtonClick($event)"
+    [timer]="timer"></app-editable-timer>
 </div>

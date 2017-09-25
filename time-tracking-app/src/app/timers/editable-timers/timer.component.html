@@ -20,5 +20,8 @@
   </div>
 </div>
 <div class='ui bottom attached blue basic button'>
-  Start
+  <app-timer-action-button
+    (actionButtonClick)="onActionButtonClick($event)"
+    [timerId]="timer.id">
+  </app-timer-action-button>
 </div>

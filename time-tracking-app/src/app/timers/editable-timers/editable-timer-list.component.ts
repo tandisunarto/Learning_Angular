@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TimerSeed } from 'seed';
 
 @Component({
@@ -8,9 +8,13 @@ import { TimerSeed } from 'seed';
 })
 export class EditableTimerListComponent implements OnInit {
   @Input() timers;
+  @Output() actionButtonClick: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onActionButtonClick(timerId) {
+    this.actionButtonClick.emit(timerId);
   }
 }

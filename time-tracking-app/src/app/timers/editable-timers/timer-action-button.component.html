@@ -1,0 +1,5 @@
+<!-- <div class='ui bottom attached basic button green' -->
+<div [ngClass]="{ui: true, bottom: true, attached: true, basic: true, button: true, red: isStart, green: !isStart}"
+  (click)="onActionButtonClick()">
+  {{this.isStart ? 'Stop': 'Start'}}
+</div>

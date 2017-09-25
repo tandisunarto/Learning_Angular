@@ -5,4 +5,5 @@
 </app-timer-form>
 <app-timer class='ui centered card editable-timer' 
     *ngIf="!editFormOpen" 
+    (actionButtonClick)="onActionButtonClick($event)"
     [timer]="timer"></app-timer>
