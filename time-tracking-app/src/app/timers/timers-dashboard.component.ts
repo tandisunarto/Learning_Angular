@@ -37,6 +37,15 @@ export class TimersDashboardComponent implements OnInit {
     )
   }
 
+  onUpdateClicked(timer) {
+  }
+
+  onDeleteClicked(timerId) {
+    this.timers = this.timers.filter(
+      (timer) => timer.id !== timerId
+    );
+  }
+
   elapsedTime(timer): number {
     if (timer.runningSince > 0) {
       return timer.elapsed + Date.now() - timer.runningSince

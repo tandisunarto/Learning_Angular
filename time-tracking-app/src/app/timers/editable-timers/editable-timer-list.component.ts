@@ -8,6 +8,8 @@ import { TimerSeed } from 'seed';
 })
 export class EditableTimerListComponent implements OnInit {
   @Input() timers;
+  @Output() updateClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() deleteClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() actionButtonClick: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
@@ -16,5 +18,13 @@ export class EditableTimerListComponent implements OnInit {
 
   onActionButtonClick(timerId) {
     this.actionButtonClick.emit(timerId);
+  }
+
+  onUpdateClick(timer) {
+    this.updateClicked.emit(timer);
+  }
+
+  onDeleteClick(timerId) {
+    this.deleteClicked.emit(timerId);
   }
 }

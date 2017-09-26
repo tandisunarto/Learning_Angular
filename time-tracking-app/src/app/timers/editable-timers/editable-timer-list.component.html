@@ -2,5 +2,7 @@
   <app-editable-timer 
     *ngFor="let timer of timers" 
     (actionButtonClick)="onActionButtonClick($event)"
+    (deleteClick)="onDeleteClick($event)"
+    (updateClick)="onUpdateClick($event)"
     [timer]="timer"></app-editable-timer>
 </div>

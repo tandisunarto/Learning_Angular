@@ -1,9 +1,12 @@
 <app-timer-form class='ui centered card editable-timer' 
     *ngIf="editFormOpen"
+    (submitClicked)="onSubmitClicked($event)"
     (cancelClicked)="onCancelClicked()"
     [timer]="timer">
 </app-timer-form>
 <app-timer class='ui centered card editable-timer' 
     *ngIf="!editFormOpen" 
+    (editButtonClick)="onEditButtonClick($event)"
+    (deleteButtonClick)="onDeleteButtonClick($event)"
     (actionButtonClick)="onActionButtonClick($event)"
     [timer]="timer"></app-timer>

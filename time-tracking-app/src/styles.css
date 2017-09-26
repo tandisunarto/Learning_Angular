@@ -12,3 +12,8 @@
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
+
+i.trash.icon,
+i.edit.icon {
+  cursor: pointer;
+}

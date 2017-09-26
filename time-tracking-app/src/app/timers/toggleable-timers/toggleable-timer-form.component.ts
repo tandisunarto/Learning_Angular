@@ -25,7 +25,8 @@ export class ToggleableTimerFormComponent implements OnInit {
     this.isOpen = false;
   }
 
-  onCreateClicked(timer) {
+  onSubmitClicked(timer) {
+    console.log('test')
     this.isOpen = false;
     this.createClicked.emit(timer);
   }
