@@ -6,13 +6,13 @@ export const TimerSeed = [
         project: 'Web Domination',
         elapsed: '8986300',
         id: v4(),
-        runningSince: null
+        runningSince: 0
     },
     {
         title: 'Learn Extreme Ironing',
         project: 'World Domination',
         elapsed: '3890985',
         id: v4(),
-        runningSince: null
+        runningSince: 0
     }
 ]

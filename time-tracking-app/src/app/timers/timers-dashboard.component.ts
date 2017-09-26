@@ -22,6 +22,18 @@ export class TimersDashboardComponent implements OnInit {
   }
 
   onActionButtonClick(timerId) {
-    console.log('TimersDashboardComponent: ' + timerId);
+    this.timers = this.timers.map(
+      (timer) => {
+        if (timer.id === timerId) {
+          return Object.assign({}, timer,
+            {
+              runningSince: timer.runningSince > 0 ? 0 : Date.now()
+            }
+          )
+        } else {
+          return timer;
+        }
+      }
+    )
   }
 }

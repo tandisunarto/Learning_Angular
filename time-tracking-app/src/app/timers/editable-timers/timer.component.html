@@ -22,6 +22,7 @@
 <div class='ui bottom attached blue basic button'>
   <app-timer-action-button
     (actionButtonClick)="onActionButtonClick($event)"
+    [timerIsRunning]="timer.runningSince"
     [timerId]="timer.id">
   </app-timer-action-button>
 </div>

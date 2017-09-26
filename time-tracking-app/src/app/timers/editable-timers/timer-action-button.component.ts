@@ -9,14 +9,13 @@ export class TimerActionButtonComponent implements OnInit {
 
   @Input() timerId;
   @Output() actionButtonClick: EventEmitter<string> = new EventEmitter<string>();
-  isStart = false;
+  @Input() timerIsRunning;
 
   constructor() { }
 
   ngOnInit() { }
 
   onActionButtonClick() {
-    this.isStart = !this.isStart;
     this.actionButtonClick.emit(this.timerId);
   }
 
