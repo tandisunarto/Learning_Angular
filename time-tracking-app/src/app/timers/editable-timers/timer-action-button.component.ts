@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TimerActionButtonComponent implements OnInit {
 
   @Input() timerId;
-  @Output() actionButtonClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() actionButtonClick: EventEmitter<any> = new EventEmitter<any>();
   @Input() timerIsRunning;
 
   constructor() { }
@@ -16,7 +16,7 @@ export class TimerActionButtonComponent implements OnInit {
   ngOnInit() { }
 
   onActionButtonClick() {
-    this.actionButtonClick.emit(this.timerId);
+    this.actionButtonClick.emit();
   }
 
 }

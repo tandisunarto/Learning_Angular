@@ -26,14 +26,26 @@ export class TimersDashboardComponent implements OnInit {
       (timer) => {
         if (timer.id === timerId) {
           return Object.assign({}, timer,
-            {
-              runningSince: timer.runningSince > 0 ? 0 : Date.now()
-            }
-          )
+          {
+            elapsed: this.elapsedTime(timer),
+            runningSince: this.runningSinceTime(timer)
+          })
         } else {
           return timer;
         }
       }
     )
+  }
+
+  elapsedTime(timer): number {
+    if (timer.runningSince > 0) {
+      return timer.elapsed + Date.now() - timer.runningSince
+    } else {
+      return timer.elapsed
+    }
+  }
+
+  runningSinceTime(timer): number {
+    return timer.runningSince > 0 ? 0 : Date.now();
   }
 }
