@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TimerSeed } from 'seed';
 import { Helpers } from '../helpers';
+import { SeedTimerService } from 'app/services/seed-timer.service'
+import { TimerModel } from 'app/models/timer'
 
 @Component({
   selector: 'app-timers-dashboard',
@@ -9,52 +11,26 @@ import { Helpers } from '../helpers';
 })
 export class TimersDashboardComponent implements OnInit {
 
-  timers: any[] = TimerSeed;
+  timers: any[];
 
-  constructor() { }
+  constructor(private seedTimerService: SeedTimerService) { }
 
   ngOnInit() {
+    this.timers = this.seedTimerService.getTimers();
   }
 
   onCreateClicked(timer) {
-    const newTimer = new Helpers().newTimer(timer);
-    this.timers = this.timers.concat(newTimer);
+    this.timers = this.seedTimerService.insertTimer(timer);
   }
 
   onActionButtonClick(timerId) {
-    this.timers = this.timers.map(
-      (timer) => {
-        if (timer.id === timerId) {
-          return Object.assign({}, timer,
-          {
-            elapsed: this.elapsedTime(timer),
-            runningSince: this.runningSinceTime(timer)
-          })
-        } else {
-          return timer;
-        }
-      }
-    )
+    this.timers = this.seedTimerService.timerAction(timerId);
   }
 
   onUpdateClicked(timer) {
   }
 
   onDeleteClicked(timerId) {
-    this.timers = this.timers.filter(
-      (timer) => timer.id !== timerId
-    );
-  }
-
-  elapsedTime(timer): number {
-    if (timer.runningSince > 0) {
-      return timer.elapsed + Date.now() - timer.runningSince
-    } else {
-      return timer.elapsed
-    }
-  }
-
-  runningSinceTime(timer): number {
-    return timer.runningSince > 0 ? 0 : Date.now();
+    this.timers = this.seedTimerService.deleteTimer(timerId);
   }
 }

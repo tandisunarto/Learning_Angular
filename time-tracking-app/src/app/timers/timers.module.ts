@@ -8,6 +8,7 @@ import { TimerComponent } from './editable-timers/timer.component';
 import { TimerFormComponent } from './editable-timers/timer-form.component';
 import { EditableTimerComponent } from './editable-timers/editable-timer.component';
 import { TimerActionButtonComponent } from './editable-timers/timer-action-button.component';
+import { SeedTimerService } from 'app/services/seed-timer.service';
 
 @NgModule({
   imports: [
@@ -25,6 +26,9 @@ import { TimerActionButtonComponent } from './editable-timers/timer-action-butto
   ],
   exports: [
     TimersDashboardComponent
+  ],
+  providers: [
+    SeedTimerService
   ]
 })
 export class TimersModule { }

@@ -7,6 +7,7 @@ export class Helpers {
       project: attrs.project || 'Project',
       id: v4(), // eslint-disable-line no-undef
       elapsed: 0,
+      runningSince: 0,
     };
 
     return timer;
