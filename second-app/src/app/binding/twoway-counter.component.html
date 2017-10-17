@@ -15,11 +15,14 @@
   (change)="onGenderChanged()">
 <span class="radioClass">{{"Female (" + female + ")"}}</span>
 
+<!-- testing 2 control bound to the same property in the component -->
+<input type="text"  
+  [(ngModel)]="myInput"
+  (change)="onMyInputChanged()">
 <input type="text"
-value="test 1"
-[(ngModel)]="myInput"
-(change)="onMyInputChanged()">
-<input type="text"
-value="test 2"
-[(ngModel)]="myInput"
-(change)="onMyInputChanged()">
+  [(ngModel)]="myInput"
+  (change)="onMyInputChanged()">
+
+  <div style="margin-top: 10px">
+      <app-dummy [message]="myInput"></app-dummy>
+  </div>
