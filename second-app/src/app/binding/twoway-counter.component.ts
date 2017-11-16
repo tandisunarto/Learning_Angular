@@ -18,7 +18,16 @@ export class TwowayCounterComponent implements OnInit {
   @Output() genderChanged: EventEmitter<string> = new EventEmitter<string>();
 
   selectedGenderValue = 'all';
-  myInput: string;
+
+  // trying two way binding with getter/setter
+  _myInput = '';
+  get myInput(): string {
+    return this._myInput;
+  }
+
+  set myInput(value) {
+    this._myInput = value;
+  }
 
   constructor() { }
 
@@ -26,12 +35,10 @@ export class TwowayCounterComponent implements OnInit {
   }
 
   onGenderChanged(myEvent) {
-    console.log(this.selectedGenderValue);
     this.genderChanged.emit(this.selectedGenderValue);
   }
 
   onMyInputChanged() {
-    console.log(this.myInput);
   }
 
 }

@@ -19,10 +19,9 @@
 <input type="text"  
   [(ngModel)]="myInput"
   (change)="onMyInputChanged()">
-<input type="text"
-  [(ngModel)]="myInput"
-  (change)="onMyInputChanged()">
 
-  <div style="margin-top: 10px">
-      <app-dummy [message]="myInput"></app-dummy>
-  </div>
+<span>({{myInput.length}})</span>
+
+<div style="margin-top: 10px">
+    <app-dummy [message]="myInput"></app-dummy>
+</div>
