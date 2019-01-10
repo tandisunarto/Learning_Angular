@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatButtonModule } from '@angular/material';
-import { Button1Component } from './playground/button1/button1.component';
+
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Button1Component,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
