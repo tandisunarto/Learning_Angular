@@ -9,6 +9,9 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
   declarations: [RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent
   ]
 })
 export class RecipesModule { }

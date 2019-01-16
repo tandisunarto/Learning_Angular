@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingModule } from './shopping-list/shopping.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +19,9 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    RecipesModule,
+    ShoppingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

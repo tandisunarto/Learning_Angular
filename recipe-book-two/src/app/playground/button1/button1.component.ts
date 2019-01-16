@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'recipe-button1',
+  selector: 'app-button1',
   templateUrl: './button1.component.html',
   styleUrls: ['./button1.component.css']
 })

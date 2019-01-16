@@ -7,6 +7,9 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
   declarations: [ShoppingListComponent, ShoppingEditComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ShoppingListComponent, ShoppingEditComponent
   ]
 })
 export class ShoppingModule { }
