@@ -4,15 +4,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
+// import { SignupComponent, LoginComponent } from './auth';
+// import { CompletedTrainingComponent, NewTrainingComponent, CurrentTrainingComponent, TrainingComponent } from './training';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TrainingModule } from './training/training.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule,
+    TrainingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
