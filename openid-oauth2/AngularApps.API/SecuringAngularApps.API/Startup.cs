@@ -24,7 +24,8 @@ namespace SecuringAngularApps.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ProjectDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("ProjectDbContext")));
+                options.UseSqlite(Configuration.GetConnectionString("ProjectDbContextSqlite")));
+                // options.UseSqlServer(Configuration.GetConnectionString("ProjectDbContext")));
             services.AddCors(options =>
             {
                 options.AddPolicy("AllRequests", builder =>

@@ -5,7 +5,6 @@
     <UserSecretsId>aspnet-IdentityServerWithAspNetIdentity-04C6939F-E672-4E56-B4A5-5F064EB67F23</UserSecretsId>
   </PropertyGroup>
 
-
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="3.4.0" />
     <PackageReference Include="IdentityServer4" Version="2.1.0" />

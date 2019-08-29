@@ -5,10 +5,6 @@ namespace SecuringAngularApps.API.Model
 {
     public class ProjectDbContext : DbContext
     {
-        public ProjectDbContext()
-        {
-
-        }
         public ProjectDbContext(DbContextOptions<ProjectDbContext> options) : base(options)
         {
         }
@@ -21,7 +17,7 @@ namespace SecuringAngularApps.API.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("name=ProjectDbContext");
+            // optionsBuilder.UseSqlServer("name=ProjectDbContext");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
