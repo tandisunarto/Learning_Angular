@@ -4,13 +4,21 @@
     userStore: new Oidc.WebStorageStateStore({ store: window.localStorage })
   };
   var mgr = new Oidc.UserManager(config);
-  mgr.signinRedirectCallback().then(() => {
-        window.history.replaceState({},
-            window.document.title,
-            window.location.origin);
-        window.location = "/";
-    }, error => {
-        console.error(error);
-    });
+  mgr.signinRedirectCallback().then((user) => {
+    console.log('************************************************************************')
+    if (user) {
+      Object.keys(user).map(k => console.log(k, ':', user[k]));
+      const profile = user.profile;
+      console.log(Object.keys(profile).map(k => k))
+      console.log(Object.keys(profile).map(k => profile[k]))
+    }
+    console.log('************************************************************************')
+    window.history.replaceState({},
+        window.document.title,
+        window.location.origin);
+    window.location = "/";
+  }, error => {
+    console.error(error);
+  });
 
 </script>
